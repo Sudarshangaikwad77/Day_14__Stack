@@ -17,6 +17,18 @@ public class StackMain {
         }
     }
 
+    public int dequeue() {
+        return queue.removeFirst();
+    }
+
+    public boolean isEmpty() {
+        return queue.isEmpty();
+    }
+
+    public int size() {
+        return queue.size();
+    }
+
     public static void main(String[] args) throws IllegalStateException {
         System.out.println("Welcome to Stack with linked list problem.");
         StackMain queue = new StackMain();
@@ -26,5 +38,16 @@ public class StackMain {
         queue.enqueue(70);
 
         queue.printQueue();
+
+        System.out.println("\nQueue size: " + queue.size());
+
+        int element = queue.dequeue();
+        System.out.println("Removed element: " + element);
+
+        while (!queue.isEmpty()) {
+            System.out.println(queue.dequeue());
+        }
+
+        System.out.println("\nQueue size: " + queue.size());
     }
 }
